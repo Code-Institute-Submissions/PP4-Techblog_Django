@@ -6,5 +6,5 @@ __pycache__/
 *.py[cod]
 node_modules/
 .github/
-cloudinary_python.txt
 settings.py
+cloudinary_python.txt
