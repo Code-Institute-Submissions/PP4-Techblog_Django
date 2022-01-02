@@ -14,6 +14,7 @@ class PostingForm(forms.ModelForm):
             'content': forms.Textarea(attrs={'class': 'form-control'}),
         }
 
+
 class EditForm(forms.ModelForm):
     class Meta:
         model = Post
