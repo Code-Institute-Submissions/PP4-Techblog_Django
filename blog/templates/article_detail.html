@@ -20,7 +20,7 @@
 
     {% endif %}
 
-<p>{{ post.content }}</p>
+{{ post.content|safe }}
 
 <a href="{% url 'home' %}" class="btn btn-dark">Back</a>
 
