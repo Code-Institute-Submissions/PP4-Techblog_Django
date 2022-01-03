@@ -7,10 +7,18 @@
 <h3>{{ post.title }}</h3>
 <small> By: {{ post.author.first_name }} {{ post.author.last_name }} - 
     {{ post.publication_date }} -
+
+    {% if user.is_authenticated %}
     <a href="{% url 'edit_post' post.pk %}">(Edit your post)</a>
 
     <a href="{% url 'delete_post' post.pk %}">(delete)</a>
 </small>
+
+    {% else %}
+
+    Please register or login!
+
+    {% endif %}
 
 <p>{{ post.content }}</p>
 
