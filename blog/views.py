@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post
+from .models import Post, Category
 from .forms import PostingForm, EditForm
 from django.urls import reverse_lazy
 
@@ -13,6 +13,10 @@ class HomePage(ListView):
     model = Post
     template_name = 'home.html'
     ordering = ['-publication_date']
+
+def CategoryView(request, cat):
+    category_posts = Post.objects.filter(category=cat)
+    return render(request, 'categories.html', {'cat': cat, 'category_posts': category_posts})
 
 
 class ArticleDetailView(DetailView):
