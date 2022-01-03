@@ -11,7 +11,7 @@
         {{ post.author.last_name }} - {{ post.publication_date }}
 
         {% if user.is_authenticated %}
-        
+
         <small><a href="{% url 'edit_post' post.pk %}">(Edit)</a>
         
         <a href="{% url 'delete_post' post.pk %}">(delete)</a>
@@ -19,7 +19,7 @@
         {% endif %}
         
         </small><br/>
-        {{ post.body }}</li>
+        {{ post.body|slice:":150" }}</li>
     
    
 {% endfor %}
