@@ -14,9 +14,9 @@ class HomePage(ListView):
     template_name = 'home.html'
     ordering = ['-publication_date']
 
-def CategoryView(request, cat):
-    category_posts = Post.objects.filter(category=cat)
-    return render(request, 'categories.html', {'cat': cat, 'category_posts': category_posts})
+def CategoryView(request, cats):
+    category_posts = Post.objects.filter(category=cats)
+    return render(request, 'categories.html', {'cats': cats.title(), 'category_posts': category_posts})
 
 
 class ArticleDetailView(DetailView):
