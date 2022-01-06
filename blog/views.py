@@ -12,7 +12,7 @@ from django.urls import reverse_lazy
 class HomePage(ListView):
     model = Post
     template_name = 'home.html'
-    cats = Category.object.all()
+    cats = Category.objects.all()
     ordering = ['-publication_date']
     
     def get_context_data(self, *args, **kwargs):
@@ -22,7 +22,7 @@ class HomePage(ListView):
         return context
 
 
-def CategoryListView(request, cats):
+def CategoryListView(request):
     cat_menu_list = Category.objects.all()
     return render(request, 'categorie_list.html', {'cat_menu_list': cat_menu_list})
 

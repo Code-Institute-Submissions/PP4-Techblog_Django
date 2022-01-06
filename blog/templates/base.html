@@ -37,6 +37,12 @@
                 {% endfor %}
                 </div>
             </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'category-list' %}">Category List</a>
+              </li>
+              
+
             {% endif %}
             {% if user.is_authenticated %}
 
