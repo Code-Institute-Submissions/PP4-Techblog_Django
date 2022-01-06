@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-
+    {% if user.id == post.author.id %}
 <h1>Update your post</h1>
 <br/><br/><br/>
 
@@ -14,11 +14,18 @@
     <button class="btn btn-dark">Add Post</button>
 
 </div>
+    
+    {% else %}
+
+    Please register or login!
+
+    {% endif %}
 
 {% else %}
 
 Please register or login!
 
 {% endif %}
+
 
 {% endblock %}
