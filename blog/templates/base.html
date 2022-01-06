@@ -23,16 +23,21 @@
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
+
+            {% if cat_menu %}
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
                 Categories
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-              </div>
+                {% for item in cat_menu %}
+                <a class="dropdown-item" href="{% url 'category' item|slugify %}">{{ item }}</a>
+
+                
+                {% endfor %}
+                </div>
             </li>
-          
+            {% endif %}
             {% if user.is_authenticated %}
 
             <li class="nav-item">
