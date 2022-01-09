@@ -4,7 +4,7 @@ from django.urls import reverse
 from datetime import datetime, date
 
 class Category(models.Model):
-    name = models.CharField(max_length=150)
+    name = models.CharField(max_length=50)
     
     def __str__(self):
         return self.name
@@ -14,7 +14,7 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=150)
+    title = models.CharField(max_length=50)
     title_tag = models.CharField(max_length=150)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
