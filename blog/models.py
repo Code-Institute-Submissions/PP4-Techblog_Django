@@ -21,6 +21,7 @@ class Post(models.Model):
     content = RichTextField(blank=True, null=True)
     publication_date = models.DateField(auto_now_add=True)
     category = models.CharField(max_length=150, default='uncategorised')
+    snip = models.CharField(max_length=150, default='Click to read post')
     likes = models.ManyToManyField(User, related_name='blog_post')
 
     def total_likes(self):

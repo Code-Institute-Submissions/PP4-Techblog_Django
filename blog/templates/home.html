@@ -22,7 +22,9 @@
         {% endif %}
         
         </small><br/>
-        {{ post.content|slice:":75"|safe }}</li>
+
+        {{ post.snip }}
+       </li>
     
    
 {% endfor %}
