@@ -7,15 +7,15 @@
 
 {% if user.is_authenticated %}
 
-<h1>Edit your post</h1>
+<h1>Add a post to the board</h1>
 <br/><br/><br/>
 
 <div class="form-group">
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.media }}
     {{ form.as_p }}
-    <button class="btn btn-dark">Add Post</button>
+    <button class="btn btn-dark">Post</button>
 
 </div>
 
