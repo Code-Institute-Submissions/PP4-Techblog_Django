@@ -14,14 +14,16 @@
     <a href="{% url 'edit_post' post.pk %}">(Edit your post)</a>
 
     <a href="{% url 'delete_post' post.pk %}">(delete)</a>
-</small>
 
-    <!-- {% else %} -->
 
-    <!-- Please register or login! -->
         {% endif %}
     {% endif %}
+</small><br/>
 
+
+<img src="{{ post.head_img.url }}">
+
+<br/><br/>
 {{ post.content|safe }}
 
 <a href="{% url 'home' %}" class="btn btn-dark">Back</a>
