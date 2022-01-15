@@ -20,8 +20,9 @@
     {% endif %}
 </small><br/>
 
-
+{% if post.head_img %}
 <img src="{{ post.head_img.url }}">
+{% endif %}
 
 <br/><br/>
 {{ post.content|safe }}
