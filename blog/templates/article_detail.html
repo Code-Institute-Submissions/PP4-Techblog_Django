@@ -64,11 +64,23 @@
               {{ post.author.first_name }} 
               {{ post.author.last_name }}</h5>
           <p class="small text-muted">
-            <a href="">website</a> |
-            <a href="">instagram</a> |
-            <a href="">twitter</a> |
-            <a href="">linkedin</a>
-
+          
+            {% if post.author.userprofile.website_url %}  
+            <a href="{{ post.author.userprofile.website_url }}">website</a> |
+            {% endif %} 
+           
+            {% if post.author.userprofile.instagram_url %}  
+            <a href="{{ post.author.userprofile.instagram_url }}">instagram</a> |
+            {% endif %} 
+          
+            {% if post.author.UserProfile.twitter_url %}  
+            <a href="{{ post.author.userprofile.twitter_url }}">twitter</a> |
+            {% endif %} 
+           
+            {% if post.author.userprofile.linkedin_url %}  
+            <a href="{{ post.author.userprofile.linkedin_url }}">linkedin</a> 
+            {% endif %} 
+            
           </p>
           <p class="card-text">{{ post.author.userprofile.bio }}</p>
           
