@@ -1,8 +1,15 @@
 from django.shortcuts import render
 from django.views import generic
+from django.views.generic import DetailView
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.urls import reverse_lazy
 from .forms import RegistrationForm, UpdateProfileForm
+
+
+class ProfilePageView(DetailView):
+    model = Profile
+    template_name = 'registration/user_profile.html'
+
 
 
 class UserRegisterView(generic.CreateView):
