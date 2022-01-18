@@ -70,6 +70,8 @@
               {{ post.author.first_name }} 
               {{ post.author.last_name }}</h5>
           <p class="small text-muted">
+
+            <a href="{% url 'show_profile_page' post.author.userprofile.id %}">Profile Page</a>
           
             {% if post.author.userprofile.website_url %}  
             <a href="{{ post.author.userprofile.website_url }}">website</a> |
