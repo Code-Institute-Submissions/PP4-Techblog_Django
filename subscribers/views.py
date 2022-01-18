@@ -10,6 +10,10 @@ class CreateProfilePageView(generic.CreateView):
     model = UserProfile
     template_name = "registration/create_user_profile_page.html"
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
 class EditProfilePageView(generic.UpdateView):
     model = UserProfile
     template_name = 'registration/edit_profile_page.html'
