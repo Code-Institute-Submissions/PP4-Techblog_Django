@@ -6,6 +6,12 @@ from django.urls import reverse_lazy
 from .forms import RegistrationForm, UpdateProfileForm
 from blog.models import UserProfile
 
+
+class EditProfilePageView(generic.UpdateView):
+    model = UserProfile
+    template_name = 'registration/edit_profile_page.html'
+
+
 class ProfilePageView(DetailView):
     model = UserProfile
     template_name = 'registration/user_profile.html'
