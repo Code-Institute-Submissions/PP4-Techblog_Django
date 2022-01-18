@@ -6,6 +6,7 @@ __pycache__/
 *.py[cod]
 node_modules/
 .github/
-settings.py
+settings.py/
 *.settings.py
 cloudinary_python.txt
+Marktechblog/settings.py

@@ -24,6 +24,7 @@ class EditProfilePageView(generic.UpdateView):
     success_url = reverse_lazy('login')
 
 
+
 class ProfilePageView(DetailView):
     model = UserProfile
     template_name = 'registration/user_profile.html'
@@ -41,6 +42,7 @@ class UserRegisterView(generic.CreateView):
     form_class = RegistrationForm
     template_name = 'registration/registration.html'
     success_url = reverse_lazy('login')
+
 
 class UserUpdateView(generic.UpdateView):
     form_class = UpdateProfileForm

@@ -60,7 +60,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'update_profile' %}">Edit Settings</a>
-                {% if user.UserProfile.id %}
+                {% if user.userprofile.id %}
                 <a class="dropdown-item" href="{% url 'edit_profile_page' user.userprofile.id %}">Edit Profile Page</a>
                 {% else %}
                 <a class="dropdown-item" href="{% url 'create_profile_page' %}">Create Profile Page</a>
@@ -89,7 +89,7 @@
            
           </ul>
           {% if user.is_authenticated %}
-            {% if user.UserProfile.id %}
+            {% if user.userprofile.id %}
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="#">
