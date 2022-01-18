@@ -88,6 +88,18 @@
             {% endif %}        
            
           </ul>
+          {% if user.is_authenticated %}
+            {% if user.UserProfile.id %}
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                {{ user.first_name }} {{ user.last_name }}
+              </a>
+            </li>
+
+          </ul>
+            {% endif %}
+          {% endif %}
         </div>
       </nav>
       <div class="container">
