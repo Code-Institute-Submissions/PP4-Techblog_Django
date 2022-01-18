@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .models import Post, Category
+from .models import Post, Category, Comment
 from .forms import PostingForm, EditForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
@@ -69,6 +69,11 @@ class AddPostView(CreateView):
     model = Post
     form_class = PostingForm
     template_name = 'add_post.html'
+
+class AddCommentView(CreateView):
+    model = Comment
+    template_name = 'add_comment.html'
+    fields = '__all__'
 
 
 class AddCategoryView(CreateView):
