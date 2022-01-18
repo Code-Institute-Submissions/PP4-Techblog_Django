@@ -10,12 +10,14 @@ from blog.models import UserProfile
 class EditProfilePageView(generic.UpdateView):
     model = UserProfile
     template_name = 'registration/edit_profile_page.html'
+    fields = ['bio', 'avatar', 'website_url', 'instagram_url', 'twitter_url', 'linkedin_url']
+    success_url = reverse_lazy('login')
 
 
 class ProfilePageView(DetailView):
     model = UserProfile
     template_name = 'registration/user_profile.html'
-    
+ 
     def get_context_data(self, *args, **kwargs):
         users = UserProfile.objects.all()
         context = super(ProfilePageView, self).get_context_data(*args, **kwargs)

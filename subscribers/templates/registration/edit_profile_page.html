@@ -6,7 +6,7 @@
 
 
 {% if user.is_authenticated %}
-
+    {% if user.id == profile.user.id %}
 <h1>Edit Profile Page</h1>
 <br/><br/><br/>
 
@@ -21,8 +21,14 @@
 
 {% else %}
 
-Please register or login!
+You are not the correct user to edit this page.
+
 
 {% endif %}
 
+{% else %}
+
+Please register or login!
+
+{% endif %}
 {% endblock %}
