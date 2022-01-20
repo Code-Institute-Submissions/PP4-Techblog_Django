@@ -6,4 +6,5 @@ admin.site.register(Category)
 admin.site.register(UserProfile)
 admin.site.register(Comment)
 
+
 # Register your models here.

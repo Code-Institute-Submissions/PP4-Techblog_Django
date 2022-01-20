@@ -13,6 +13,8 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('home')
 
+# The model for the Userprofile object
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
     bio = models.TextField()
@@ -24,8 +26,8 @@ class UserProfile(models.Model):
     linkedin_url = models.CharField(max_length=200, null=True, blank=True)
 
 
-    def get_absolute_url(self):
-        return reverse('home')
+    def __str__(self):
+        return str(self.user)
 
 
 # The Model for a Blog Post, using PK for post entry in DB
