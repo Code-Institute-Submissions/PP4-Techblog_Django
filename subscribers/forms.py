@@ -42,7 +42,7 @@ class UpdateProfileForm(UserChangeForm):
     last_name = forms.CharField(max_length=20, widget=forms.TextInput(attrs={'class': 'form-control'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
     username = forms.CharField(max_length=20, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    
+   
 
     class Meta:
         model = User
