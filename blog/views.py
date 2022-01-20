@@ -18,7 +18,7 @@ def LikeView(request, pk):
     return HttpResponseRedirect(reverse('article-detail', args=[str(pk)]))
 
 
-# View for Homepage.
+# View for Homepage, using listview to view list of posts
 
 class HomePage(ListView):
     model = Post
@@ -42,7 +42,7 @@ def CategoryView(request, cats):
     return render(request, 'categories.html', {'cats': cats.title().replace('-', ' '), 'category_posts': category_posts})
 
 
-# View for Article Details
+# View for Article Details, using detailview for 1 post on screen.
 
 
 class ArticleDetailView(DetailView):
@@ -68,10 +68,13 @@ class ArticleDetailView(DetailView):
         return context
 
 
+# View for Adding a Post, using Createview for this
+
 class AddPostView(CreateView):
     model = Post
     form_class = PostingForm
     template_name = 'add_post.html'
+
 
 class AddCommentView(CreateView):
     model = Comment
