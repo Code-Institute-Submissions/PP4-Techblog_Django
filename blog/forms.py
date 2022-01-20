@@ -23,6 +23,7 @@ class PostingForm(forms.ModelForm):
             'content': forms.Textarea(attrs={'class': 'form-control'}),
         }
 
+# Form for editing / updating your post
 
 class EditForm(forms.ModelForm):
     class Meta:

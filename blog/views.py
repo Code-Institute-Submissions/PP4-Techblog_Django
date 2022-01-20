@@ -93,6 +93,9 @@ class AddCategoryView(CreateView):
     fields = '__all__'
 
 
+# Class for editing / updating your post
+
+
 class EditPostView(UpdateView):
     model = Post
     form_class = EditForm
