@@ -6,9 +6,6 @@ from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 
 
-# def home(request):
-# return render(request, 'home.html', {})
-
 def LikeView(request, pk):
     post = get_object_or_404(Post, id=request.POST.get('post_id'))
     liked = False
@@ -19,6 +16,9 @@ def LikeView(request, pk):
         post.likes.add(request.user)
         liked = True
     return HttpResponseRedirect(reverse('article-detail', args=[str(pk)]))
+
+
+# View for Homepage.
 
 class HomePage(ListView):
     model = Post
@@ -40,6 +40,9 @@ def CategoryListView(request):
 def CategoryView(request, cats):
     category_posts = Post.objects.filter(category=cats.replace('-', ' '))
     return render(request, 'categories.html', {'cats': cats.title().replace('-', ' '), 'category_posts': category_posts})
+
+
+# View for Article Details
 
 
 class ArticleDetailView(DetailView):

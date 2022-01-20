@@ -105,14 +105,16 @@
     <a href="{% url 'add_comment' post.pk %}">Add a comment</a>
   
   {% else %}
+  
   <a href="{% url 'add_comment' post.pk %}">Add comment</a>
   <br/>
     {% for comment in post.comments.all %}
-      {{ comment.name }} - 
-      {{ comment.date_added }}
-      <br/>
+      
+    {{ comment.name }} - {{ comment.date_added }}
+      <br/><br/>
+
       {{ comment.body }}
-      <a href="{% url 'add_comment' post.pk %}">Add comment</a>
+      
     {% endfor %}
   {% endif %}
   

@@ -28,6 +28,9 @@ class UserProfile(models.Model):
         return reverse('home')
 
 
+# The Model for a Blog Post, using PK for post entry in DB
+
+
 class Post(models.Model):
     title = models.CharField(max_length=50)
     head_img = models.ImageField(null=True, blank=True, upload_to="images/")

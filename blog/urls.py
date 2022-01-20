@@ -1,5 +1,4 @@
 from django.urls import path
-# from . import views
 from .views import HomePage, ArticleDetailView, AddPostView, EditPostView, DeletePost, AddCategoryView, CategoryView, CategoryListView, LikeView, AddCommentView
 
 urlpatterns = [

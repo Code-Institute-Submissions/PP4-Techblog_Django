@@ -5,6 +5,9 @@
 <h1>Post Board</h1>
 
 <ul>
+
+<!--- Loop through blog post object list and output them on screen --->
+    
 {% for post in object_list %}
 
     <li><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> 
