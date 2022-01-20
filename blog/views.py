@@ -102,6 +102,8 @@ class EditPostView(UpdateView):
     template_name = 'edit_post.html'
 
 
+# Class for deleting a post
+
 class DeletePost(DeleteView):
     model = Post
     template_name = 'delete_post.html'

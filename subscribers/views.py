@@ -15,6 +15,12 @@ def password_success(request):
     return render(request, 'registration/password_success.html', {})
 
 
+class UserRegisterView(generic.CreateView):
+    form_class = RegistrationForm
+    template_name = 'registration/registration.html'
+    success_url = reverse_lazy('login')
+
+
 class CreateProfilePageView(CreateView):
     class Meta:
         model = UserProfile
@@ -53,6 +59,9 @@ class UserRegisterView(generic.CreateView):
     success_url = reverse_lazy('login')
 
 
+
+# This class is for updating the user profile
+
 class UserUpdateView(generic.UpdateView):
     form_class = UpdateProfileForm
     template_name = 'registration/update_profile.html'
@@ -60,4 +69,3 @@ class UserUpdateView(generic.UpdateView):
 
     def get_object(self):
         return self.request.user
-
