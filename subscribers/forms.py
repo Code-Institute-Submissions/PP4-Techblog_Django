@@ -3,17 +3,20 @@ from django.contrib.auth.models import User
 from django import forms
 from blog.models import UserProfile
 
-class ProfilePageForm(forms.ModelForm):
-    model = UserProfile
-    field = ('bio', 'avatar', 'website_url', 'instagram_url', 'twitter_url', 'linkedin_url')
-    widgets = {
-        'bio': forms.Textarea(attrs={'class': 'form-control'}),
-        # 'avatar': forms.TextInput(attrs={'class': 'form-control'}),
-        'website_url': forms.TextInput(attrs={'class': 'form-control'}),
-        'instagram_url': forms.TextInput(attrs={'class': 'form-control'}),
-        'twitter_url': forms.TextInput(attrs={'class': 'form-control'}),
-        'linkedin_url': forms.TextInput(attrs={'class': 'form-control'}),
-    }
+# # form for creating a User Profile Page
+
+# class ProfilePageForm(forms.ModelForm):
+#     class Meta:
+#         model = UserProfile
+#         fields = ('bio', 'website_url', 'instagram_url', 'twitter_url', 'linkedin_url')
+
+#         widgets = {
+#             'bio': forms.Textarea(attrs={'class': 'form-control'}),
+#             'website_url': forms.TextInput(attrs={'class': 'form-control'}),
+#             'instagram_url': forms.TextInput(attrs={'class': 'form-control'}),
+#             'twitter_url': forms.TextInput(attrs={'class': 'form-control'}),
+#             'linkedin_url': forms.TextInput(attrs={'class': 'form-control'}),
+#         }
 
 
 # User Registration Form

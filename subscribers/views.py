@@ -4,7 +4,7 @@ from django.views.generic import DetailView, CreateView, UpdateView
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
-from .forms import RegistrationForm, UpdateProfileForm, ProfilePageForm, PasswordChangingForm
+from .forms import RegistrationForm, UpdateProfileForm, PasswordChangingForm
 from blog.models import UserProfile
 
 
@@ -23,17 +23,18 @@ class UserRegisterView(generic.CreateView):
     template_name = 'registration/registration.html'
     success_url = reverse_lazy('login')
 
+# View for creating a Userprofile if none exists
 
 class CreateProfilePageView(CreateView):
-    class Meta:
-        model = UserProfile
-        form_class = ProfilePageForm
-        template_name = "registration/create_user_profile_page.html"
+    model = UserProfile
+    fields = ('bio', 'website_url', 'instagram_url', 'twitter_url', 'linkedin_url')
+    template_name = "registration/create_user_profile_page.html"
         
-
-        def form_valid(self, form):
-            form.instance.user = self.request.user
-            return super().form_valid(form)
+        
+        #grab user when form is filled out and make this available to the form itself
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 # View for updating the User Profile ( Bio, Website etc)
 

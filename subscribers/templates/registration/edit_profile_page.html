@@ -4,6 +4,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
+    {% if user.id == userprofile.user.id %}
     
 <h1>Edit profile Page </h1>
 <br/><br/><br/>
@@ -19,13 +20,15 @@
 
 {% else %}
 
-You are not the correct user to edit this page.
+You are not the correct user to Edit this Page
 
 
+{% endif %}
 
+{% else %}
 
+You do not have access to this page.
 
-Please register or login!
 
 {% endif %}
 {% endblock %}
