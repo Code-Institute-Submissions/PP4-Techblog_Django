@@ -16,8 +16,8 @@ class PostingForm(forms.ModelForm):
         fields = ('title', 'title_tag', 'author', 'category', 'head_img', 'content')
 
         widgets = {
-            'title': forms.TextInput(attrs={'class': 'form-control'}),
-            'title_tag': forms.TextInput(attrs={'class': 'form-control'}),
+            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Please enter title of your post'}),
+            'title_tag': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter short description'}),
             'author': forms.TextInput(attrs={'class': 'form-control', 'value':'', 'id':'identifier', 'type':'hidden'}),
             'category': forms.Select(choices=cats_list, attrs={'class': 'form-control'}),
             'content': forms.Textarea(attrs={'class': 'form-control'}),
