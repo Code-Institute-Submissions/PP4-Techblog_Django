@@ -58,7 +58,7 @@
     <div class="row g-0">
       <div class="col-md-2">
         {% if post.author.userprofile.avatar %}
-        <img src="{{ post.author.userprofile.avatar.url }}" class="img-fluid rounded-start" alt="...">
+        <img src="{{ post.author.userprofile.avatar.url }}" class="img-fluid rounded-start" alt="Profile Picture">
         
         {%else %}
         <img src="{% static 'marktechblog/images/default_profile_pic.png' %}" class="img-fluid rounded-start" alt="...">
@@ -71,7 +71,7 @@
               {{ post.author.last_name }}</h5>
           <p class="small text-muted">
 
-            <a href="{% url 'show_profile_page' post.author.user.id %}">Profile Page</a>
+            <a href="{% url 'show_profile_page' post.author.userprofile.id %}">Profile Page</a>
           
             {% if post.author.userprofile.website_url %}  
             <a href="{{ post.author.userprofile.website_url }}">website</a> |
