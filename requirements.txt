@@ -1,10 +1,13 @@
 asgiref==3.4.1
 backports.zoneinfo==0.2.1
 cloudinary==1.28.0
-Django==4.0
+dj-database-url==0.5.0
+Django==3.2
 django-ckeditor==6.2.0
 django-js-asset==1.2.2
+gunicorn==20.1.0
 Pillow==9.0.0
+psycopg2==2.9.3
 pylint-django==2.5.0
 pylint-plugin-utils==0.7
 sqlparse==0.4.2
