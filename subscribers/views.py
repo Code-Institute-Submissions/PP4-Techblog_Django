@@ -29,13 +29,12 @@ class CreateProfilePageView(CreateView):
     model = UserProfile
     fields = ('bio', 'website_url', 'instagram_url', 'twitter_url', 'linkedin_url')
     template_name = "registration/create_user_profile_page.html"
-        
-        
+    success_url = reverse_lazy('home')
         #grab user when form is filled out and make this available to the form itself
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
-
+        
 # View for updating the User Profile ( Bio, Website etc)
 
 class EditProfilePageView(UpdateView):
