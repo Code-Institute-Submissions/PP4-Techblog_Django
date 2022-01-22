@@ -8,7 +8,7 @@ cats_list = []
 for item in cats:
     cats_list.append(item)
 
-#Form for posting a post
+# Form for posting a post
 
 class PostingForm(forms.ModelForm):
     class Meta:
